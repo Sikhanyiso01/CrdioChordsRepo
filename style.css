@@ -11,6 +11,13 @@
     background: linear-gradient(to bottom, black, #222);
     color: white;
     line-height: 1.6;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Fade-in Animation for the Page */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
   
   /* Header */
@@ -19,17 +26,31 @@
     text-align: center;
     padding: 2rem 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    animation: slideDown 1.5s ease-out;
   }
   
   header h1 {
     font-size: 3rem;
     color: white;
     text-shadow: 2px 2px 4px black;
+    animation: glow 2s infinite alternate;
   }
   
   header p {
     font-size: 1.2rem;
     margin-top: 0.5rem;
+  }
+  
+  /* Header Slide Down Animation */
+  @keyframes slideDown {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Header Glow Effect */
+  @keyframes glow {
+    0% { text-shadow: 2px 2px 8px white; }
+    100% { text-shadow: 4px 4px 12px black; }
   }
   
   /* Navigation (Optional if added) */
@@ -66,11 +87,26 @@
     font-size: 2rem;
     color: red;
     margin-bottom: 1rem;
+    position: relative;
+    animation: slideIn 1.5s ease-out;
+  }
+  
+  /* Slide-in Animation for Section Headings */
+  @keyframes slideIn {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
   }
   
   main p, main ol li {
     font-size: 1.1rem;
     margin: 1rem 0;
+    animation: fadeUp 2s ease-out;
+  }
+  
+  /* Fade-up Animation for Text */
+  @keyframes fadeUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
   }
   
   /* Ordered List */
@@ -95,6 +131,7 @@
     border-radius: 50px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    animation: bounce 2s infinite alternate;
   }
   
   main .button:hover {
@@ -104,6 +141,12 @@
     transform: scale(1.05);
   }
   
+  /* Bounce Animation for Buttons */
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
+  
   /* Footer */
   footer {
     background: black;
@@ -111,6 +154,7 @@
     text-align: center;
     padding: 1rem 0;
     border-top: 2px solid red;
+    animation: fadeIn 2s ease-in-out;
   }
   
   footer p {
