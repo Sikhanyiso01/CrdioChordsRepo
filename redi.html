@@ -15,21 +15,31 @@
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
 
+    // Display the result to the user
     if (code) {
       console.log('Authorization Code:', code);
 
-      // OPTIONAL: You can display the code on the page (for testing)
-      const message = document.createElement('p');
-      message.textContent = `Authorization Code: ${code}`;
-      document.body.appendChild(message);
+      // Display success message
+      const successMessage = document.createElement('p');
+      successMessage.textContent = `Authorization Code Retrieved: ${code}`;
+      document.body.appendChild(successMessage);
 
-      // OPTIONAL: Redirect to another page or process the code further
+      // Optionally send the code to your backend for token exchange
+      // For example:
+      // fetch('/exchange-token', { method: 'POST', body: JSON.stringify({ code }) })
     } else {
       console.error('Authorization code not found.');
-      const error = document.createElement('p');
-      error.textContent = 'Failed to retrieve authorization code.';
-      document.body.appendChild(error);
+      const errorMessage = document.createElement('p');
+      errorMessage.textContent = 'Failed to retrieve authorization code.';
+      document.body.appendChild(errorMessage);
     }
+
+    // Add a "Back to Home" button
+    const backButton = document.createElement('a');
+    backButton.href = "https://sikhanyiso01.github.io/CrdioChordsRepo/";
+    backButton.textContent = "Back to Home";
+    backButton.classList.add('button'); // Assuming you have a "button" CSS class
+    document.body.appendChild(backButton);
   </script>
 </body>
 </html>
